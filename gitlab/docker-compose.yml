@@ -1,8 +1,11 @@
-version: '3'
+version: "3"
 
 services:
+  # gitlab用のコンテナ
   gitlab:
     image: gitlab/gitlab-ce:latest
+    container_name: gitlab
+    hostname: gitlab
     restart: always
     ports:
       - "9001:443"

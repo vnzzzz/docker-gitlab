@@ -1,2 +1,3 @@
 # docker-gitlab
-dockerでgitlab/gitlab-runnerを準備
+
+docker で gitlab/gitlab-runner を準備
