@@ -106,10 +106,15 @@ docker で gitlab/gitlab-runner を準備
 
    1. gitlab 側で登録の確認
 
-1. `gitlab-ci.yml`を作成する
+      settings > CI/CD > runner から確認する
+      ![picture 10](images/gitlab-settings-runner2.png)
 
-   settings > CI/CD > runner 　から確認する
-   ![picture 10](images/gitlab-settings-runner2.png)
+1. tag なしで実行できるように設定
+
+   settings > CI/CD > runner から設定する
+   ![picture 11](images/gitlab-settings-runner3.png)
+
+1. `gitlab-ci.yml`を作成する
 
 1. ユーザーを登録する
 
