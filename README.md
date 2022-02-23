@@ -185,17 +185,17 @@ docker で gitlab/gitlab-runner を準備
 
 1. テスト用プロジェクトをクローンする
 
-   下記のコマンドでは、テスト用に作成した`test_project1`プロジェクトを`git clone`している。
+   下記のコマンドでは、テスト用に作成した`test_project1`プロジェクトをcloneしている。
 
    ```bash
    git clone http://127.0.0.1:9000/root/test_project1.git
    ```
 
-   `git clone`する場所(=開発環境)は、gitlab/gitlab-runner コンテナのホストと疎通が取れる環境であればどこでも良い。
+   clone先(=開発環境)は、gitlab/gitlab-runner コンテナのホストと疎通が取れる環境であればどこでも良い。
 
 1. `gitlab-ci.yml`を作成する
 
-   `git clone`してきたプロジェクトのルートで、`.gitlab-ci.yml`を作成する。
+   クローンしてきたプロジェクトのルートで、`.gitlab-ci.yml`を作成する。
 
    ```yml
    image: python:3.10
@@ -209,7 +209,7 @@ docker で gitlab/gitlab-runner を準備
 
    ここでは python を使った開発を行うプロジェクトだと想定し、python 実行用のコンテナを準備している。
 
-1. (オプション)テスト実行用の`.py`ファイルを作成
+1. (オプション)テスト実行用のpythonファイルを作成
 
    開発中の python スクリプトとして、下記の内容で`test.py`を作成する。
 
