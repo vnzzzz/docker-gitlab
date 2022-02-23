@@ -31,7 +31,11 @@ docker で gitlab/gitlab-runner を準備
    ```
 
    `-d`はバックグランドで実行させるオプション。
-   docker-sompose の実行ログを見たかったら`docker-compose logs`を実行する。
+   docker-sompose の実行ログを確認したい場合は下記を実行する
+
+   ```bash
+   docker-compose logs
+   ```
 
 1. gitlab へログインする
 
@@ -41,10 +45,9 @@ docker で gitlab/gitlab-runner を準備
 
    1. Administrator でログインする
 
-      | アカウント情報 |      |
-      | -------------- | ---- |
-      | Username       | root |
-      | Password       | 後述 |
+      | Username | Password |
+      | -------- | -------- |
+      | root     | 後述     |
 
       password は`./gitlab`で下記を実行することにより取得する
 
