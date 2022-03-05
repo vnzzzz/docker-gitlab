@@ -18,6 +18,9 @@ docker で gitlab/gitlab-runner を準備
   ```bash
   .
   ├── README.md
+  ├── ansible
+  │   ├── down.yml
+  │   └── up.yml
   ├── gitlab
   │   ├── docker-compose.yml
   │   └── gitlab #ローカルマウント用ディレクトリ
@@ -185,13 +188,13 @@ docker で gitlab/gitlab-runner を準備
 
 1. テスト用プロジェクトをクローンする
 
-   下記のコマンドでは、テスト用に作成した`test_project1`プロジェクトをcloneしている。
+   下記のコマンドでは、テスト用に作成した`test_project1`プロジェクトを clone している。
 
    ```bash
    git clone http://127.0.0.1:9000/root/test_project1.git
    ```
 
-   clone先(=開発環境)は、gitlab/gitlab-runner コンテナのホストと疎通が取れる環境であればどこでも良い。
+   clone 先(=開発環境)は、gitlab/gitlab-runner コンテナのホストと疎通が取れる環境であればどこでも良い。
 
 1. `gitlab-ci.yml`を作成する
 
@@ -209,7 +212,7 @@ docker で gitlab/gitlab-runner を準備
 
    ここでは python を使った開発を行うプロジェクトだと想定し、python 実行用のコンテナを準備している。
 
-1. (オプション)テスト実行用のpythonファイルを作成
+1. (オプション)テスト実行用の python ファイルを作成
 
    開発中の python スクリプトとして、下記の内容で`test.py`を作成する。
 
@@ -237,3 +240,17 @@ docker で gitlab/gitlab-runner を準備
 
       実行結果の一例
       ![picture 13](images/gitlab-cicd-result.png)
+
+### (おまけ)ansible で up/down を一括管理
+
+gitlab, gitlab-runner を一括 up
+
+```bash
+ansible-playbook ansible/up.yml
+```
+
+gitlab, gitlab-runner を一括 down
+
+```bash
+ansible-playbook ansible/down.yml
+```
